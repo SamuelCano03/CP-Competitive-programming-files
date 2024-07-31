@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Especifica el cpp bro :b"
+  exit 1
+fi
+
+source_file="$1"
+
+output_file="z.out"
+
+g++ "$source_file" -o "$output_file"
+
+if [ $? -eq 0 ]; then
+  ./"$output_file"
+else
+  echo "Error en la compilación."
+  exit 1
+fi
+
